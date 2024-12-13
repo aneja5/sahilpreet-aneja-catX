@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const endpoint = process.env.MONGODB_URI;
+const endpoint = "mongodb+srv://aneja:Fateh_01@webdev.dvkzt.mongodb.net/?retryWrites=true&w=majority&appName=WebDev";
 
 const connectMongo = async () => {
 	try {
