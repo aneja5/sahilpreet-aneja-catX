@@ -13,9 +13,9 @@ import connectMongo from "./mongoDB/connectMongo.js";
 dotenv.config();
 
 cloudinary.config({
-	cloud_name: "dxazbajp9",
-	api_key: "366728229941518",
-	api_secret: "3wayYTl60M1R_op2sn9Y7zejc1M",
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_KEY,
+	api_secret: process.env.API_SECTRET,
 });
 
 const app = express();
