@@ -10,7 +10,6 @@ const CreateStatus = () => {
     const [img, setImg] = useState(null);
     const imgRef = useRef(null);
 
-    // Fetch authenticated user data
     const { data: authenticateUser, isLoading, isError } = useQuery({
         queryKey: ["authenticateUser"],
     });

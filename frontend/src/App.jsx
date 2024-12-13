@@ -14,7 +14,7 @@ import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
-  const location = useLocation(); // Get current location (route)
+  const location = useLocation();
   
   const { data: authenticateUser, isLoading } = useQuery({
     queryKey: ["authenticateUser"],
@@ -43,19 +43,14 @@ function App() {
     );
   }
 
-  // Check if the current route is login or signup page
   const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
 
   return (
     <div className='flex max-w-6xl mx-auto'>
-      {/* Conditionally render Navbar and RightSideBoxWithSearch based on the route */}
       {!isAuthPage && <Navbar />}
 
       <Routes>
-        {/* Homepage is accessible for everyone */}
         <Route path='/' element={<HomePage />} />
-
-        {/* Login and Signup are accessible for non-authenticated users */}
         <Route path='/login' element={!authenticateUser ? <LoginPage /> : <Navigate to='/' />} />
         <Route path='/signup' element={!authenticateUser ? <SignUpPage /> : <Navigate to='/' />} />
     

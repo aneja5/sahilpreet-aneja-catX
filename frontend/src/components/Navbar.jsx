@@ -40,7 +40,6 @@ const Navbar = () => {
 					alt="Logo" className="px-2 w-12 h-12 rounded-full fill-white hover:bg-stone-900" />
 				</Link>
 				<ul className="flex flex-col gap-3 mt-4">
-					{/* Home Button */}
 					<li className="flex justify-center md:justify-start">
 						<Link
 							to="/"
@@ -67,10 +66,8 @@ const Navbar = () => {
 					)}
 				</ul>
 
-				{/* User-specific Buttons */}
 				{authenticateUser ? (
 					<>
-						{/* Display Logged-In User's Profile Info and Logout Option */}
 						<Link
 							to={`/profile/${authenticateUser.username}`}
 							className="mt-auto mb-10 flex gap-2 items-start transition-all duration-300 hover:bg-[#181818] py-2 px-4 rounded-full"
@@ -97,7 +94,6 @@ const Navbar = () => {
 					</>
 				) : (
 					<>
-						{/* Display Login and Signup for Logged-Out Users */}
 						<li className="flex justify-center md:justify-start">
 							<Link
 								to="/login"
