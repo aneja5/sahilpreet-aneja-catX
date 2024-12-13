@@ -1,7 +1,7 @@
 
 const AppLogo = (props) => (
   <img
-    src="/src/assets/app-logo.png"
+    src="../dist/app-logo.png"
     alt="Logo"
     {...props}
   />
