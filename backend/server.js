@@ -15,7 +15,7 @@ dotenv.config();
 cloudinary.config({
 	cloud_name: process.env.CLOUD_NAME,
 	api_key: process.env.API_KEY,
-	api_secret: process.env.API_SECTRET,
+	api_secret: process.env.API_SECRET, // Corrected API_SECTRET to API_SECRET
 });
 
 const app = express();
@@ -31,14 +31,14 @@ app.use("/api/users", userRoute);
 app.use("/api/status", statusRoute);
 
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
 app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+	res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+	console.log(`Server running on port ${PORT}`);
 	connectMongo();
 });
