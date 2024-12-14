@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import AppLogo from "../components/AppLogo";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -49,11 +48,11 @@ const LoginPage = () => {
 	return (
 		<div className='max-w-screen-xl mx-auto flex h-screen'>
 			<div className='flex-1 hidden lg:flex items-center  justify-center'>
-			<AppLogo className='lg:w-2/3 fill-white' />
+				<img src="/app-logo.png" alt="Logo" className='lg:w-2/3 fill-white' />
 			</div>
 			<div className='flex-1 flex flex-col justify-center items-center'>
 				<form className='flex gap-4 flex-col' onSubmit={handleSubmit}>
-					<AppLogo className='w-24 lg:hidden fill-white' />
+					<img src="/app-logo.png" alt="Logo" className='w-24 lg:hidden fill-white' />
 					<h1 className='text-4xl font-extrabold text-white'>Lesssgooo</h1>
 					<label className='input input-bordered rounded flex items-center gap-2'>
 						<input

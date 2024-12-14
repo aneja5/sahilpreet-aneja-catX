@@ -1,6 +1,6 @@
 const AppLogo = (props) => (
   <img
-    src="/app-logo.png" // Remove "/public/" from the path
+    src="/app-logo.png"
     alt="Logo"
     {...props}
   />
