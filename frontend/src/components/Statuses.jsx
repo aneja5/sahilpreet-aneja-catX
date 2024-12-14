@@ -3,10 +3,9 @@ import StatusBox from "./StatusBox";
 import { useQuery } from "@tanstack/react-query";
 
 const Statuses = ({ username = null }) => {
-	// Decide the endpoint based on whether a username is provided
 	const ENDPOINT = username
-		? `/api/status/user/${username}` // Fetch user-specific statuses for Profile Page
-		: `/api/status/all`; // Fetch all statuses for Home Page
+		? `/api/status/user/${username}` 
+		: `/api/status/all`;
 
 	const {
 		data: statuses,

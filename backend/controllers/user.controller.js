@@ -19,16 +19,15 @@ export const getUserProfile = async (req, res) => {
 
 export const searchUsers = async (req, res) => {
 	try {
-		const { query } = req.query; // Get query string from the request
+		const { query } = req.query;
 
 		if (!query) {
 			return res.status(400).json({ error: "Query string is required" });
 		}
 
-		// Search for users whose username matches the query (case-insensitive)
 		const users = await User.find({
-			username: { $regex: query, $options: "i" }, // Partial matching (case-insensitive)
-		}).limit(10); // Limit results to prevent overload
+			username: { $regex: query, $options: "i" }, 
+		}).limit(10);
 
 		res.status(200).json(users);
 	} catch (error) {
@@ -65,7 +64,6 @@ export const updateUser = async (req, res) => {
 
 		if (profileImg) {
 			if (user.profileImg) {
-				// https://res.cloudinary.com/dyfqon1v6/image/upload/v1712997552/zmxorcxexpdbh8r0bkjb.png
 				await cloudinary.uploader.destroy(user.profileImg.split("/").pop().split(".")[0]);
 			}
 
@@ -81,7 +79,6 @@ export const updateUser = async (req, res) => {
 
 		user = await user.save();
 
-		// password should be null in response
 		user.password = null;
 
 		return res.status(200).json(user);
