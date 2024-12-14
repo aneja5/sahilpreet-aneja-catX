@@ -20,7 +20,7 @@ function App() {
     queryKey: ["authenticateUser"],
     queryFn: async () => {
       try {
-        const res = await fetch("/api/authenticate/me");
+        const res = await fetch("https://sahilpreet-aneja-project3.onrender.com/api/authenticate/me");
         const data = await res.json();
         if (data.error) return null;
         if (!res.ok) {
