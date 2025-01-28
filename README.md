@@ -50,12 +50,6 @@ This assignment took approximately 40 hours to complete. The initial setup, incl
 3. **Tanstack**: Used for managing application state, including handling data fetching and managing the data flow across different components.
 4. **React Icons**: Used for adding scalable vector icons to enhance the UI.
 
-## Bonus Points
-
-1. **Password Encryption**
-2. **Image Status Updates**
-3. **Search for Users**
-
 ---
 
 Feel free to reach out if you have any questions or feedback!
